@@ -1,0 +1,15 @@
+{
+  "name": "testcafe_basics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "testcafe chrome ./pom/tests"
+  },
+  "author": "mrodriguez",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "testcafe": "^1.18.6"
+  }
+}
