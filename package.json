@@ -4,12 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe chrome ./pom/tests"
+    "logintest": "testcafe chrome ./pom/tests/cd",
+    "createtasktest": "testcafe chrome ./pom/tests/Createtasks.test.js",
+    "logintestH": "testcafe chrome:headless ./pom/tests/Login.test.js",
+    "createtasktestH": "testcafe chrome:headless ./pom/tests/Createtasks.test.js",
+    "alltests":"testcafe chrome ./pom/tests"
   },
   "author": "mrodriguez",
   "license": "ISC",
   "dependencies": {
+    "@doist/todoist-api-typescript": "^1.5.0",
     "dotenv": "^16.0.1",
-    "testcafe": "^1.18.6"
+    "testcafe": "^1.18.6",
+    "testcafe-browser-provider-browserstack": "^1.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-plugin-testcafe": "^0.2.1"
   }
 }
