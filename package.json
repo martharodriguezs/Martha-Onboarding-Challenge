@@ -8,7 +8,8 @@
     "createtasktest": "testcafe chrome ./pom/tests/Createtasks.test.js",
     "logintestH": "testcafe chrome:headless ./pom/tests/Login.test.js",
     "createtasktestH": "testcafe chrome:headless ./pom/tests/Createtasks.test.js",
-    "alltests":"testcafe chrome ./pom/tests"
+    "alltests":"testcafe chrome ./pom/tests",
+    "apitest":"newman run ./Postman-Newman/Martha_Onboarding_Challenge.postman_collection.json -e ./Postman-Newman/ProjectList.postman_environment.json"
   },
   "author": "mrodriguez",
   "license": "ISC",
