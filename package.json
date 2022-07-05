@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "logintest": "testcafe chrome ./pom/tests/cd",
+    "logintest": "testcafe chrome ./pom/tests/Login.test.js",
     "createtasktest": "testcafe chrome ./pom/tests/Createtasks.test.js",
     "logintestH": "testcafe chrome:headless ./pom/tests/Login.test.js",
     "createtasktestH": "testcafe chrome:headless ./pom/tests/Createtasks.test.js",

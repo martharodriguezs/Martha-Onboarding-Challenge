@@ -7,7 +7,7 @@ fixture('Login feature test')
     .page`${URLS.LOGIN_URL}`
 
 test('As a user, i should be able to create a task', async () => {
-    await 
+    await
     loginPage.submitLoginForm(CREDENTIALS.STANDARD_USER.USERNAME, CREDENTIALS.STANDARD_USER.PASSWORD) 
-    taskPage.createTask(NUMBERTASKS.NUMBER_TASKS.NUMBEROFTASKS);
+    taskPage.createTask(NUMBERTASKS.NUMBER_TASKS.NUMBEROFTASKS)
 })

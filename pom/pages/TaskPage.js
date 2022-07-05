@@ -7,6 +7,7 @@ class TaskPage {
         this.addTaskHeader = Selector('div.DraftEditor-editorContainer > div')
         this.addTaskDescription = Selector('.f9408a0e')
         this.addTaskButton = Selector('._7a2031d6.a878a9a4')
+        this.taskName = Selector('.markdown_content task_content')
     }
 
     async createTask(numberoftasks) {
