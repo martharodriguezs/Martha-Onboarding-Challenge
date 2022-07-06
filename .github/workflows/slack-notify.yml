@@ -8,5 +8,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Slack Notification
       uses: rtCamp/action-slack-notify@v2
+      with:
+        payload : { 
+          "text": "This is a line of text in a channel.\nAnd this is another line of text." 
+        }
       env:
         SLACK_WEBHOOK: ${{ MARTHARDZ_SECRET.SLACK_WEBHOOK }}
