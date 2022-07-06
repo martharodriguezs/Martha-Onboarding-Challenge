@@ -21,6 +21,6 @@ export const INVALIDCREDENTIALS = {
 
 export const NUMBERTASKS = {
     NUMBER_TASKS: {
-        NUMBEROFTASKS: '9'
+        NUMBEROFTASKS: '10'
     }
 }
