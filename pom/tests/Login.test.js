@@ -6,13 +6,13 @@ import taskPage from '../pages/TaskPage'
 fixture('Login feature test')
     .page`${URLS.LOGIN_URL}`
 
-test.skip('As a user, i should not be able to log in successfully when login form user and password are empty', async () => {
+test('As a user, i should not be able to log in successfully when login form user and password are empty', async () => {
     await t 
         .click(loginPage.loginButton)
         .expect(loginPage.labelUserPasswordEmpty.exists).ok()    
 })
 
-test.skip('As a user, i should not be able to log in successfully when providing only the password', async () => {
+test('As a user, i should not be able to log in successfully when providing only the password', async () => {
     await loginPage.submitLoginForm(" ", CREDENTIALS.STANDARD_USER.PASSWORD)
     await t.expect(loginPage.labelUserEmailEmpty.exists).ok()     
 })
