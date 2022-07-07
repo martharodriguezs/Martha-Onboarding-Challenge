@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "af014412-f664-4b9a-abdf-ec810d60a942",
-		"name": "Martha Onboarding Challenge",
+		"name": "Martha_Onboarding_Challenge",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "21448579"
 	},
@@ -98,12 +98,108 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "{{base_url}}projects/1",
+									"raw": "{{base_url}}projects/2222222222",
 									"host": [
 										"{{base_url}}projects"
 									],
 									"path": [
-										"1"
+										"2222222222"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Project mising name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{my_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"\",\n    \"Content-Type\": \"application/json\",\n    \"X-Request-Id\": \"$(uuidgen)\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}projects/{{ProjectId}}",
+									"host": [
+										"{{base_url}}projects"
+									],
+									"path": [
+										"{{ProjectId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete project Not found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 204\", function () {",
+											"    pm.response.to.have.status(204);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{my_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}projects/2222222222",
+									"host": [
+										"{{base_url}}projects"
+									],
+									"path": [
+										"2222222222"
 									]
 								}
 							},
@@ -416,12 +512,12 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "{{base_url}}tasks/{{TaskId}}",
+									"raw": "{{base_url}}tasks/2222222222",
 									"host": [
 										"{{base_url}}tasks"
 									],
 									"path": [
-										"{{TaskId}}"
+										"2222222222"
 									]
 								}
 							},
@@ -471,6 +567,208 @@
 									"raw": "{{base_url}}tasks",
 									"host": [
 										"{{base_url}}tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Task Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {",
+											"    pm.response.to.have.status(404);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{my_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"content\": \"\",\n    \"Content-Type\": \"application/json\",\n    \"X-Request-Id\": \"$(uuidgen)\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}tasks/2222222222",
+									"host": [
+										"{{base_url}}tasks"
+									],
+									"path": [
+										"2222222222"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Close Task Not found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {",
+											"    pm.response.to.have.status(404);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{my_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}tasks/2222222222/close",
+									"host": [
+										"{{base_url}}tasks"
+									],
+									"path": [
+										"2222222222",
+										"close"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reopen Task Not found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {",
+											"    pm.response.to.have.status(404);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{my_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}tasks/2222222222/reopen",
+									"host": [
+										"{{base_url}}tasks"
+									],
+									"path": [
+										"2222222222",
+										"reopen"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Task Not found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 204\", function () {",
+											"    pm.response.to.have.status(204);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{my_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}tasks/2222222222",
+									"host": [
+										"{{base_url}}tasks"
+									],
+									"path": [
+										"2222222222"
 									]
 								}
 							},
